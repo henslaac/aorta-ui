@@ -1,0 +1,43 @@
+<div class="row">
+    <div class="col-md-12">
+        <div class="row">
+            <div class="col-md-12 m-auto">
+                <h3 class="multisteps-form__title hailer-title">Uploaded Records</h3>
+            </div>
+            <div class="col-md-12">
+                <div class="alert alert-danger" *ngIf="errorMessage">
+                    {{errorMessage}}
+                </div>
+                <div class="card">
+                    <div class="container" style="padding-top: 20px; padding-bottom: 10px;">
+                        <table datatable class="table table-hover" id="table_id">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Status</th>
+                                    <th>Username</th>
+                                    <th>Timestamp</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let record of allRecords">
+                                    <td>{{record.id}}</td>
+                                    <td>{{record.status}}</td>
+                                    <td>{{record.username}}</td>
+                                    <td>{{record.timestamp}}</td>
+                                </tr>
+                            </tbody>
+                            <tfoot>
+                            </tfoot>
+                        </table>
+                        <div *ngIf="isLoading">
+                            <app-spinner></app-spinner>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

@@ -1,0 +1,90 @@
+<nav class="navbar default-layout col-lg-12 col-12 p-0 navbar-expand fixed-top">
+    <div class="text-center navbar-brand-wrapper d-flex align-items-top justify-content-center">
+        <a class="navbar-brand brand-logo" href="#">
+            <img src="assets/img/logo-white.png" alt="logo" /> </a>
+        <a class="navbar-brand brand-logo-mini" href="#">
+            <img src="assets/img/hailer-icon.png" alt="logo" /> </a>
+    </div>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+        <!-- <ul class="navbar-nav" style="margin-left: 20px">
+            <li class="nav-item">
+                <a (click)="back()" class="nav-link">
+                    <i class="fas fa-long-arrow-alt-left"></i>
+                </a>
+            </li>
+        </ul>
+        <ul class="navbar-nav text-uppercase ml-auto">
+            <li class="nav-item" *ngIf="authService.isLoggedIn()">
+                <button (click)="authService.doLogout()" type="submit" class="btn btn-primary navy-btn">Logout</button>
+            </li>
+        </ul> -->
+    </div>
+</nav>
+<div class="container-fluid page-body-wrapper">
+    <!-- partial:partials/_sidebar.html -->
+    <nav class="sidebar sidebar-offcanvas" id="sidebar">
+        <!--<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#sidebar" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fas fa-bars"></i>
+      </button>-->
+        <ul class="nav">
+            <li class="nav-item nav-profile">
+                <a routerLink="profile" class="nav-link">
+                    <div class="profile-image">
+                        <img class="img-xs rounded-circle" src="assets/img/face8.jpg" alt="profile image">
+                        <div class="dot-indicator bg-success"></div>
+                    </div>
+                    <div class="text-wrapper">
+                        <p class="profile-name">{{authService.getLoggedInUserName()}}</p>
+                    </div>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" routerLink="stats">
+                    <i class="fas fa-chart-pie"></i>
+                    <span class="menu-title">Statistics</span>
+                </a>
+            </li>
+            <!-- <li class="nav-item" >
+                <a class="nav-link" routerLink="inbox">
+                    <i class="fas fa-inbox"></i>
+                    <span class="menu-title">Inbox</span>
+                </a>
+            </li> -->
+            <li class="nav-item">
+                <a class="nav-link" routerLink="upload">
+                    <i class="fas fa-file-invoice"></i>
+                    <span class="menu-title">Upload Documents</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" routerLink="all-records">
+                    <i class="fas fa-history"></i>
+                    <span class="menu-title">All Records</span>
+                </a>
+            </li>
+            <!-- <li class="nav-item" >
+                <a class="nav-link" routerLink="chat-room">
+                    <i class="fas fa-comments"></i>
+                    <span class="menu-title">Chat room</span>
+                </a>
+            </li> -->
+            <li class="nav-item">
+                <a class="nav-link" (click)="logout()">
+                    <i class="fa fa-power-off"></i>
+                    <span class="menu-title">Logout</span>
+                </a>
+            </li>
+            <!-- <li class="nav-item" >
+                <a class="nav-link" routerLink="settings">
+                    <i class="fas fa-cog"></i>
+                    <span class="menu-title">Settings</span>
+                </a>
+            </li> -->
+        </ul>
+    </nav>
+    <div class="main-panel">
+        <div class="content-wrapper">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</div>

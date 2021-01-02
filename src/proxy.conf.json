@@ -1,0 +1,12 @@
+{
+    "/files/*": {
+        "target": "http://a8cb670dedcc64a098756ca821d21198-1532313376.af-south-1.elb.amazonaws.com",
+        "secure": false,
+        "logLevel": "debug"
+    },
+    "/user/*": {
+        "target": "http://a8cb670dedcc64a098756ca821d21198-1532313376.af-south-1.elb.amazonaws.com",
+        "secure": false,
+        "logLevel": "debug"
+    }
+}

@@ -1,0 +1,74 @@
+<nav class="navbar navbar-expand-lg border-bottom navbar-dark fixed-top" id="mainNav">
+    <div class="container">
+        <meta name="hosting-dcv" content="ae451a21e81f278be33e681a2f86607d-4470974638b2846c00613b9b4def44ea">
+        <a class="navbar-brand js-scroll-trigger" href="#page-top">
+            <img class="logo-img" src="assets/img/hailer-logo.png" alt="">
+        </a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+            data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <i class="fas fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav text-uppercase ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link js-scroll-trigger" routerLink="/home">HOME</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link js-scroll-trigger" routerLink="/register">REGISTER</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link js-scroll-trigger" routerLink="/login">LOGIN</a>
+                </li>
+                <li class="nav-item">
+                    <button type="submit" class="btn btn-primary navy-btn" routerLink="/dashboard">DASHBOARD</button>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<div class="container" style="padding-top: 60px">
+    <div class="col-md-12 box-shadow">
+        <div class="row">
+            <div class="col-md-6 welcome-side one">
+                <div class="spacer-400"></div>
+            </div>
+            <div class="col-md-6 login-column">
+                <h1 class="main-heading">
+                    Sign-Up for <strong>AORTA</strong>
+                </h1>
+                <p>Lets digitize your data</p>
+                <br>
+                <div class="alert alert-danger" *ngIf="registerMessage">
+                    {{registerMessage}}
+                </div>
+                <form role="form">
+                    <div class="form-group">
+                        <input type="text" class="form-control tenant-form" [(ngModel)]="signUpUserData.companyName"
+                            name="companyName" placeholder="Company Name" id="email">
+                        <input type="text" class="form-control tenant-form"
+                            [(ngModel)]="signUpUserData.companyRegistration" name="companyRegistration"
+                            placeholder="Company Registration" id="email">
+                        <input type="text" class="form-control tenant-form" [(ngModel)]="signUpUserData.email"
+                            name="email" placeholder="Email" id="email">
+                        <input type="password" class="form-control tenant-form" [(ngModel)]="signUpUserData.password"
+                            name="password" placeholder="Password" id="email">
+                        <input type="password" class="form-control tenant-form"
+                            [(ngModel)]="signUpUserData.confirmPassword" name="confirmPassword"
+                            placeholder="Confirm Password" id="email">
+                    </div>
+
+                    <div class="buttons">
+                        <a class="float-left" routerLink="/login">Already Have An Account?</a>
+                        <button (click)="signup()" class="btn btn-primary navy-btn float-right">Sign Up </button>
+                    </div>
+                </form>
+                <div class="spacer-50"></div>
+
+            </div>
+            <div class="col-md-6 welcome-side two">
+                <div class="spacer-400"></div>
+            </div>
+        </div>
+    </div>
+</div>

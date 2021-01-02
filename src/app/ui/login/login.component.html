@@ -1,0 +1,70 @@
+<nav class="navbar navbar-expand-lg border-bottom navbar-dark fixed-top" id="mainNav">
+    <div class="container">
+        <meta name="hosting-dcv" content="ae451a21e81f278be33e681a2f86607d-4470974638b2846c00613b9b4def44ea">
+        <a class="navbar-brand js-scroll-trigger" routerLink="/">
+            <img class="logo-img" src="assets/img/hailer-logo.png" alt="">
+        </a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+            data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <i class="fas fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav text-uppercase ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link js-scroll-trigger" routerLink="/home">HOME</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link js-scroll-trigger" routerLink="/register">REGISTER</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link js-scroll-trigger" routerLink="/login">LOGIN</a>
+                </li>
+                <li class="nav-item">
+                    <button type="submit" class="btn btn-primary navy-btn" routerLink="/dashboard">DASHBOARD</button>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<div class="container" style="padding-top: 60px">
+    <div class="col-md-12 box-shadow">
+        <div class="row">
+            <div class="col-md-6 welcome-side one">
+                <div class="spacer-400"></div>
+            </div>
+            <div class="col-md-6 login-column">
+                <h1 class="main-heading">
+                    Login to <strong>AORTA</strong>
+                </h1>
+                <p>Lets digitize your data</p>
+                <br><br>
+                <div class="alert alert-danger" *ngIf="loginMessage">
+                    {{loginMessage}}
+                </div>
+                <form role="form">
+                    <div class="form-group">
+                        <input [(ngModel)]="loginUserData.username" name="username" required type="text"
+                            placeholder="Email" class="form-control tenant-form" id="username" />
+                    </div>
+
+                    <div class="form-group">
+                        <input [(ngModel)]="loginUserData.password" name="password" required type="password"
+                            placeholder="Password" class="form-control tenant-form" id="password" />
+                    </div>
+
+                    <div class="buttons">
+                        <!-- <a routerLink="/forgot-password" class="float-left">Forgot Password?</a> <br> -->
+                        <a routerLink="/register" class="float-left">Register</a>
+                        <button (click)="login()" class="btn btn-primary navy-btn float-right">Login </button>
+                    </div>
+                </form>
+                <div class="spacer-50"></div>
+
+            </div>
+            <div class="col-md-6 welcome-side two">
+                <div class="spacer-400"></div>
+            </div>
+        </div>
+    </div>
+</div>

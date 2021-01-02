@@ -1,0 +1,92 @@
+<div class="row">
+    <div class="col-md-12 m-auto">
+        <h3 class="multisteps-form__title hailer-title">Welcome back, {{authService.getLoggedInUserName()}}</h3>
+    </div>
+    <div class="col-md-12">
+        <div class="alert alert-danger" *ngIf="errorMessage">
+            {{errorMessage}}
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <p class="mb-0 text-muted">Total records<br><br></p>
+                                <div class="d-flex">
+                                    <div class="wrapper">
+                                        <span class="mb-0 driver-money">{{totalRecords}}</span>
+                                        <p class="mb-0  percent text-danger">+10%</p>
+                                    </div>
+                                    <div class="wrapper my-auto ml-auto ml-lg-4">
+                                        <canvas height="50" width="150" id="stats-line-graph-1"></canvas>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class=" col-md-12">
+                                <p class="mb-0 text-muted">Records for past 7 days<br><br></p>
+                                <div class="d-flex">
+                                    <div class="wrapper">
+                                        <span class="mb-0 driver-money">{{recordsFor7Days}}</span>
+                                        <p class="mb-0  percent text-success">+10%</p>
+                                    </div>
+                                    <div class="wrapper my-auto ml-auto ml-lg-4">
+                                        <canvas height="50" width="150" id="stats-line-graph-3"></canvas>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <p class="mb-0 text-muted">Total high temperature cases<br><br></p>
+                                <div class="d-flex">
+                                    <div class="wrapper">
+                                        <span class="mb-0 driver-money">{{highTemperatureCases}}</span>
+                                        <p class="mb-0  percent text-danger">+10%</p>
+                                    </div>
+                                    <div class="wrapper my-auto ml-auto ml-lg-4">
+                                        <canvas height="50" width="150" id="stats-line-graph-4"></canvas>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class=" col-md-12">
+                                <p class="mb-0 text-muted">High temperature cases for the past 7 days<br><br></p>
+                                <div class="d-flex">
+                                    <div class="wrapper">
+                                        <span class="mb-0 driver-money">{{highTemperatureCasesFor7Days}}</span>
+                                        <p class="mb-0  percent text-success">+10%</p>
+                                    </div>
+                                    <div class="wrapper my-auto ml-auto ml-lg-4">
+                                        <canvas height="50" width="150" id="stats-line-graph-2"></canvas>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
