@@ -4,6 +4,8 @@ import { AuthGuard } from './auth/auth.guard';
 import { CompanyDocumentsComponent } from './ui/company-documents/company-documents.component';
 import { AllRecordsComponent } from './ui/dashboard/all-records/all-records.component';
 import { DashboardComponent } from './ui/dashboard/dashboard.component';
+import { RecordDetailsComponent } from './ui/dashboard/record-details/record-details.component';
+import { RecordsPastComponent } from './ui/dashboard/records-past/records-past.component';
 import { StatsComponent } from './ui/dashboard/stats/stats.component';
 import { UploadComponent } from './ui/dashboard/upload/upload.component';
 import { HomeComponent } from './ui/home/home.component';
@@ -20,6 +22,8 @@ const routes: Routes = [
       {path: "stats", component: StatsComponent},
       {path: "upload", component: UploadComponent},
       {path: "all-records", component: AllRecordsComponent},
+      {path: "record-details", component: RecordDetailsComponent},
+      {path: "past-7-days", component: RecordsPastComponent},
       {path: "", redirectTo: "stats", pathMatch: "full"}
     ],canActivate: [AuthGuard], data: { expectedRoles: null }
   },

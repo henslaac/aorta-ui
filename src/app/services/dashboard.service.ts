@@ -11,6 +11,7 @@ import {Record} from "../models/record"
 export class DashboardService {
 
   private RECORDS_BASE = "/files/"
+  public currentRecord: Record | undefined
 
   constructor(
     private http: HttpClient
@@ -20,11 +21,15 @@ export class DashboardService {
     return this.http.get<Record[]>(this.RECORDS_BASE)
   }
 
+  getRecordsFor7Days(): Observable<Record[]>{
+    return this.http.get<Record[]>(this.RECORDS_BASE+"uploads-for-7-days")
+  }
+
   getCountRecords(): Observable<number>{
     return this.http.get<number>(this.RECORDS_BASE+"total-uploads")
   }
 
   getCountRecords7days(): Observable<number>{
-    return this.http.get<number>(this.RECORDS_BASE+"uploads-for-7-days")
+    return this.http.get<number>(this.RECORDS_BASE+"count-uploads-for-7-days")
   }
 }

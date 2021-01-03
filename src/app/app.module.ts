@@ -15,6 +15,8 @@ import { TokenInterceptorService } from './auth/token-interceptor.service';
 import { StatsComponent } from './ui/dashboard/stats/stats.component';
 import { UploadComponent } from './ui/dashboard/upload/upload.component';
 import { AllRecordsComponent } from './ui/dashboard/all-records/all-records.component';
+import { RecordDetailsComponent } from './ui/dashboard/record-details/record-details.component';
+import { RecordsPastComponent } from './ui/dashboard/records-past/records-past.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +29,9 @@ import { AllRecordsComponent } from './ui/dashboard/all-records/all-records.comp
     CompanyDocumentsComponent,
     StatsComponent,
     UploadComponent,
-    AllRecordsComponent 
+    AllRecordsComponent,
+    RecordDetailsComponent,
+    RecordsPastComponent 
   ],
   imports: [
     BrowserModule,

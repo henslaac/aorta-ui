@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/auth/auth.service';
+import {Location} from '@angular/common'
 
 @Component({
   selector: 'app-dashboard',
@@ -9,7 +10,8 @@ import { AuthService } from 'src/app/auth/auth.service';
 export class DashboardComponent implements OnInit {
 
   constructor(
-    public authService: AuthService
+    public authService: AuthService,
+    private location: Location
   ) { }
 
   ngOnInit(): void {
@@ -17,6 +19,10 @@ export class DashboardComponent implements OnInit {
 
   logout(){
     this.authService.doLogout()
+  }
+
+  back(){
+    this.location.back()
   }
 
 }

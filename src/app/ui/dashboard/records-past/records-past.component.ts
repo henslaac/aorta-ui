@@ -1,16 +1,15 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Record } from 'src/app/models/record';
+import { Record } from 'src/app/models/record'
 import { DashboardService } from 'src/app/services/dashboard.service';
 
 @Component({
-  selector: 'app-all-records',
-  templateUrl: './all-records.component.html',
-  styleUrls: ['./all-records.component.css']
+  selector: 'app-records-past',
+  templateUrl: './records-past.component.html',
+  styleUrls: ['./records-past.component.css']
 })
-export class AllRecordsComponent implements OnInit {
-
+export class RecordsPastComponent implements OnInit {
   public isLoading: boolean = false
   public allRecords: Record[] | undefined
   public errorMessage: string | undefined
@@ -21,12 +20,12 @@ export class AllRecordsComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.getAllRecords()
+    this.getRecords()
   }
 
-  getAllRecords(){
+  getRecords(){
     this.isLoading = true
-    this.dashboardService.getAllRecords()
+    this.dashboardService.getRecordsFor7Days()
       .subscribe(
         res => {
           this.allRecords = res
@@ -42,11 +41,6 @@ export class AllRecordsComponent implements OnInit {
           }
         }
       )
-  }
-
-  showDetails(record: Record){
-    this.dashboardService.currentRecord = record
-    this.router.navigate(['dashboard/record-details'])
   }
 
 }
